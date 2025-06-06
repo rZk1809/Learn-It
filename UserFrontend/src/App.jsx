@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import {assets} from './assets/assets'
 
-const app = () => {
+const App = () => {
 
   return (
     <div>
@@ -11,4 +11,4 @@ const app = () => {
   )
 }
 
-export default app
+export default App
