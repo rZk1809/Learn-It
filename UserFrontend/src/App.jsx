@@ -1,21 +1,14 @@
 import React from 'react'
+import Navbar from './components/Navbar/Navbar'
+import {assets} from './assets/assets'
 
-const App = () => {
+const app = () => {
+
   return (
     <div>
-      <ul>
-        <li>
-          <a href="/api/hello">Hello API</a>
-        </li>
-        <li>
-          <a href="/api/hello-world">Hello World API</a>
-        </li>
-        <li>
-          <a href="/api/hello-world-2">Hello World 2 API</a>
-        </li>
-      </ul>
+      <Navbar />
     </div>
   )
 }
 
-export default App
+export default app

@@ -1,0 +1,43 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  height: 60px;
+}
+
+.navbar-menu{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color:azure;
+  font-weight: 1.8rem;
+}
+.logo {
+  width: 100px;
+}
+
+a{
+    font-family: 'Outfit';
+    text-decoration:  none;
+    color: black;
+
+}
+
+.navbar-right{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar button{
+  background-color: transparent;
+  border: 1px solid blue;
+  font-family: 'Outfit';
+  font-size: 1.6rem;
+  cursor: pointer;
+}
