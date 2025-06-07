@@ -1,0 +1,51 @@
+.checkout {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin: 100px 0px;
+}
+
+.checkout-left {
+    width: 100%;
+    max-width: max(40%, 500px);
+}
+
+.checkout-left .title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.checkout-left input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    outline-color: tomato;
+}
+
+.checkout-left .multi-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.checkout-right {
+    width: 100%;
+    max-width: max(35%, 400px);
+}
+
+.checkout .cart-total button {
+    margin-top: 30px;
+}
+
+@media(max-width: 900px) {
+    .checkout {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .checkout-right {
+        max-width: 100%;
+        order: -1; /* Moves the totals to the top on mobile */
+    }
+}

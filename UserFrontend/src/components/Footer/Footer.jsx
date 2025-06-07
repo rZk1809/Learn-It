@@ -27,7 +27,7 @@ const Footer = () => {
                 <div className="footer-content-right">
                     <h2>Contact Us</h2>
                     <ul>
-                        <li>+91-123-456-7890</li>
+                        <li>+91 7305636052</li>
                         <li>contact@learnit.com</li>
                     </ul>
                 </div>
