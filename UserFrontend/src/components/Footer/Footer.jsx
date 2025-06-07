@@ -12,14 +12,14 @@ const Footer = () => {
                     <div className="footer-social-icons">
                         <img src={assets.facebook_icon} alt="Facebook" />
                         <img src={assets.twitter_icon} alt="Twitter" />
-                        <img src={assets.linkedin_icon} alt="LinkedIn" />
+                        <a href='https://www.linkedin.com/in/rohith-ganesh-kanchi/'><img src={assets.linkedin_icon} alt="LinkedIn" /></a>
                     </div>
                 </div>
                 <div className="footer-content-center">
                     <h2>COMPANY</h2>
                     <ul>
-                        <li>Home</li>
-                        <li>About us</li>
+                        <a href='#header'><li>Home</li></a>
+                        <a href="#header"><li>About us</li></a>
                         <li>Help Center</li>
                         <li>Privacy policy</li>
                     </ul>
