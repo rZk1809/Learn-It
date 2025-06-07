@@ -1,62 +1,85 @@
-import React, { useContext } from 'react'
-import './Cart.css'
-import { StoreContext } from '../../Context/StoreContext'
+import React, { useContext } from 'react';
+import './Cart.css';
+import { StoreContext } from '../../Context/StoreContext';
 import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
-
     const { cartItems, course_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
     const navigate = useNavigate();
+    const totalAmount = getTotalCartAmount();
 
     return (
         <div className='cart'>
-            <div className="cart-items">
-                <div className="cart-items-title">
-                    <p>Items</p> <p>Title</p> <p>Price</p> <p>Quantity</p> <p>Total</p> <p>Remove</p>
-                </div>
-                <br />
-                <hr />
-                {course_list.map((item) => {
-                    if (cartItems[item._id] > 0) {
-                        return (
-                            <div key={item._id}>
-                                <div className="cart-items-title cart-items-item">
-                                    <img src={item.image} alt={item.name} />
-                                    <p>{item.name}</p>
-                                    <p>₹{item.price}</p>
-                                    <p>{cartItems[item._id]}</p>
-                                    <p>₹{item.price * cartItems[item._id]}</p>
-                                    <p className='cart-items-remove-icon' onClick={() => removeFromCart(item._id)}>x</p>
-                                </div>
-                                <hr />
-                            </div>
-                        )
-                    }
-                    return null;
-                })}
-            </div>
-            <div className="cart-bottom">
-                <div className="cart-total">
-                    <h2>Cart Totals</h2>
-                    <div>
-                        <div className="cart-total-details"><p>Subtotal</p><p>₹{getTotalCartAmount()}</p></div>
-                        <hr />
-                        <div className="cart-total-details"><b>Total</b><b>₹{getTotalCartAmount()}</b></div>
+            {totalAmount > 0 ? (
+                <>
+                    {/* The header is now INSIDE the check, so it only shows when the cart has items */}
+                    <div className='cart-header'>
+                        <h1>Your Course Cart</h1>
+                        <p>Review the courses you've selected and proceed to checkout.</p>
                     </div>
-                    <button onClick={() => navigate('/checkout')}>PROCEED TO CHECKOUT</button>
-                </div>
-                <div className="cart-promocode">
-                    <div>
-                        <p>If you have a promo code, Enter it here</p>
-                        <div className='cart-promocode-input'>
-                            <input type="text" placeholder='promo code' />
-                            <button>Submit</button>
+                    <div className="cart-items">
+                        {/* Added "Quantity" and "Total" back to the title */}
+                        <div className="cart-items-title">
+                            <p>Item</p>
+                            <p>Title</p>
+                            <p>Price</p>
+                            <p>Quantity</p>
+                            <p>Total</p>
+                            <p>Remove</p>
+                        </div>
+                        {course_list.map((item) => {
+                            if (cartItems[item._id] > 0) {
+                                return (
+                                    <div key={item._id} className='cart-items-row'>
+                                        <div className="cart-items-item">
+                                            <img src={item.image} alt={item.name} />
+                                            <span>{item.name}</span>
+                                        </div>
+                                        <p>₹{item.price}</p>
+                                        {/* Added the quantity display back */}
+                                        <p className="cart-quantity">{cartItems[item._id]}</p> 
+                                        {/* Added the total per-item price back */}
+                                        <p>₹{item.price * cartItems[item._id]}</p> 
+                                        <p className='cart-items-remove-icon' onClick={() => removeFromCart(item._id)}>✕</p>
+                                    </div>
+                                );
+                            }
+                            return null;
+                        })}
+                    </div>
+                    <div className="cart-bottom">
+                        <div className="cart-total">
+                            <h2>Cart Totals</h2>
+                            <div className="cart-total-details">
+                                <p>Subtotal</p>
+                                <p>₹{totalAmount}</p>
+                            </div>
+                            <hr />
+                            <div className="cart-total-details">
+                                <b>Total</b>
+                                <b>₹{totalAmount}</b>
+                            </div>
+                            <button onClick={() => navigate('/checkout')}>PROCEED TO CHECKOUT</button>
+                        </div>
+                        <div className="cart-promocode">
+                            <p>Have a promo code?</p>
+                            <div className='cart-promocode-input'>
+                                <input type="text" placeholder='Enter promo code' />
+                                <button>Apply</button>
+                            </div>
                         </div>
                     </div>
+                </>
+            ) : (
+                // This 'cart-empty' section is now the ONLY thing that shows for an empty cart
+                <div className="cart-empty">
+                    <h2>Your cart is empty.</h2>
+                    <p>Looks like you haven't added any courses yet. Explore our catalog to find a course that's right for you!</p>
+                    <button onClick={() => navigate('/')}>Browse Courses</button>
                 </div>
-            </div>
+            )}
         </div>
-    )
-}
+    );
+};
 
-export default Cart
+export default Cart;

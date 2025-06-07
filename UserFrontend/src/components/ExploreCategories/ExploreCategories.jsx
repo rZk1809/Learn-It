@@ -23,4 +23,5 @@ const ExploreCategories = ({ category, setCategory }) => {
         </div>
     );
 };
+
 export default ExploreCategories;
