@@ -46,6 +46,6 @@
     }
     .checkout-right {
         max-width: 100%;
-        order: -1; /* Moves the totals to the top on mobile */
+        order: -1; 
     }
 }

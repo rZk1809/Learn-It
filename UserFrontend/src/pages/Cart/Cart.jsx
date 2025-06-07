@@ -12,13 +12,11 @@ const Cart = () => {
         <div className='cart'>
             {totalAmount > 0 ? (
                 <>
-                    {/* The header is now INSIDE the check, so it only shows when the cart has items */}
                     <div className='cart-header'>
                         <h1>Your Course Cart</h1>
                         <p>Review the courses you've selected and proceed to checkout.</p>
                     </div>
                     <div className="cart-items">
-                        {/* Added "Quantity" and "Total" back to the title */}
                         <div className="cart-items-title">
                             <p>Item</p>
                             <p>Title</p>
@@ -36,9 +34,7 @@ const Cart = () => {
                                             <span>{item.name}</span>
                                         </div>
                                         <p>₹{item.price}</p>
-                                        {/* Added the quantity display back */}
                                         <p className="cart-quantity">{cartItems[item._id]}</p> 
-                                        {/* Added the total per-item price back */}
                                         <p>₹{item.price * cartItems[item._id]}</p> 
                                         <p className='cart-items-remove-icon' onClick={() => removeFromCart(item._id)}>✕</p>
                                     </div>
@@ -71,7 +67,6 @@ const Cart = () => {
                     </div>
                 </>
             ) : (
-                // This 'cart-empty' section is now the ONLY thing that shows for an empty cart
                 <div className="cart-empty">
                     <h2>Your cart is empty.</h2>
                     <p>Looks like you haven't added any courses yet. Explore our catalog to find a course that's right for you!</p>
