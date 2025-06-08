@@ -42,7 +42,7 @@ import course_img_14 from './conser.png'
 import course_img_15 from './ml.png'
 import course_img_16 from './nutrition.png'
 import course_img_17 from './piano.png'
-import course_img_18 from './Public.png'
+import course_img_18 from './public.png'
 
 
 export const assets = {
