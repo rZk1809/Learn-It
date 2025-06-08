@@ -1,7 +1,7 @@
 {
   "name": "learnit",
   "homepage": "https:/rZk1809.github.io/Learn-It",
-  "private": false,
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
