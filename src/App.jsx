@@ -7,7 +7,8 @@ import Cart from './pages/Cart/Cart'
 import {assets} from './assets/assets'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import Checkout from './pages/Checkout/Checkout' 
-import MyCourses from './pages/MyCourses/MyCourses';
+import MyCourses from './pages/Mycourses/Mycourses';
+
 const App = () => {
 
   const [showLogin,setShowLogin] = useState(false);
