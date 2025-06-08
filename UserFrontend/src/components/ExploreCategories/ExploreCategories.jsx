@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './ExploreCategories.css';
-import { StoreContext } from '../../Context/StoreContext';
+import { StoreContext } from '../../Context/StoreContext'; 
 
 const ExploreCategories = ({ category, setCategory }) => {
     const { category_list } = useContext(StoreContext); 
