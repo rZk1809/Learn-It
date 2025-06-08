@@ -1,17 +1,19 @@
+
 .course-display {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .course-display h2 {
-    font-size: max(2vw, 24px);
-    font-weight: 600;
+  font-size: max(2vw, 24px);
+  font-weight: 600;
 }
 
 .course-display-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    height: fit-content;
-    padding: 20px;
-    margin-top: 30px;
-    gap: 30px; 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  margin-top: 30px;
+  grid-auto-rows: 0.8r;
+  align-items: stretch;
 }
