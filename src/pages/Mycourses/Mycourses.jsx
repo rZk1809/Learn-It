@@ -1,5 +1,5 @@
 import React from 'react';
-import './MyCourses.css';
+import './Mycourses.css';
 import { assets } from '../../assets/assets'; 
 
 const MyCourses = () => {
