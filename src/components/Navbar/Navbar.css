@@ -110,11 +110,10 @@
 }
 
 .navbar-right button:hover {
-    background-color: #004494; /* Darker shade of accent */
+    background-color: #004494;
     transform: translateY(-2px);
 }
 
-/* 5. Hamburger Menu - Hidden on Desktop */
 .navbar-menu-icon {
     display: none;
     cursor: pointer;
@@ -125,56 +124,14 @@
     display: none;
 }
 
-/* 6. Responsive Design */
 @media (max-width: 900px) {
     .navbar-container {
         padding: 0 15px;
     }
     .navbar-menu-desktop {
-        display: none; /* Hide desktop menu */
+        display: none; 
     }
     .navbar-menu-icon {
-        display: block; /* Show hamburger icon */
-    }
-
-    /* Mobile Menu Styling */
-    .navbar-menu-mobile {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Start off-screen */
-        width: 280px;
-        height: 100vh;
-        background-color: var(--navbar-bg);
-        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        padding: 20px 30px;
-        gap: 25px;
-        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    
-    .navbar-menu-mobile.open {
-        right: 0; /* Slide in */
-    }
-
-    .navbar-menu-mobile .mobile-logo-row {
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-        margin-bottom: 20px;
-        cursor: pointer;
-        color: var(--primary-text);
-    }
-
-    .navbar-menu-mobile li a {
-        font-size: 18px;
-        font-weight: 500;
-        color: var(--primary-text);
-        text-decoration: none;
-    }
-
-    .navbar-menu-mobile li a.active {
-        color: var(--primary-accent);
+        display: block; 
     }
 }
